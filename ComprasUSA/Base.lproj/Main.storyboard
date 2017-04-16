@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="3084" y="-270"/>
         </scene>
-        <!--Ajustes-->
+        <!--AjustesViewController-->
         <scene sceneID="F9J-6w-aih">
             <objects>
-                <viewController id="hLx-Y3-5Ns" sceneMemberID="viewController">
+                <viewController title="AjustesViewController" id="hLx-Y3-5Ns" customClass="AjustesViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hXL-4S-pVJ"/>
                         <viewControllerLayoutGuide type="bottom" id="kK5-6B-dl9"/>
@@ -118,10 +118,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" id="Lcd-w0-YRf"/>
+                    <connections>
+                        <outlet property="etCotacao" destination="Pdo-R4-Icn" id="Cox-du-MtA"/>
+                        <outlet property="etIOF" destination="Akj-MM-kBl" id="7Jp-5w-MFb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHb-WJ-4B1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206.25" y="1109.1549295774648"/>
+            <point key="canvasLocation" x="3083" y="494"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4x6-Jr-5gV">
@@ -190,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlc-6h-raS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="1110"/>
+            <point key="canvasLocation" x="2267" y="1290"/>
         </scene>
     </scenes>
 </document>
