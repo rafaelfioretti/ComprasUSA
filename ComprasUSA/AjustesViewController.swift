@@ -29,4 +29,16 @@ class AjustesViewController: UIViewController {
         etCotacao.text = UserDefaults.standard.string(forKey: SettingsType.cotacaoDolar.rawValue)
         etIOF.text = UserDefaults.standard.string(forKey: SettingsType.vlIOF.rawValue)
     }
+    
+    @IBAction func cotacaoChange(_ sender: Any) {
+              UserDefaults.standard.set(etCotacao.text, forKey: SettingsType.cotacaoDolar.rawValue)
+    }
+
+    
+    @IBAction func iofChange(_ sender: Any) {
+                  UserDefaults.standard.set(etIOF.text, forKey: SettingsType.vlIOF.rawValue)
+    }
+    
+    
+    
 }
