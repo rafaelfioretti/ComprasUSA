@@ -100,6 +100,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcO-CD-VRL">
                                 <rect key="frame" x="257" y="310" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="hLx-Y3-5Ns" kind="show" id="eWe-6L-Svn"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gift_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-uF-H5e">
                                 <rect key="frame" x="16" y="120" width="277" height="175"/>
@@ -292,4 +295,7 @@
     <resources>
         <image name="gift_placeholder" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eWe-6L-Svn"/>
+    </inferredMetricsTieBreakers>
 </document>
