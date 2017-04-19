@@ -25,13 +25,20 @@ class AjustesViewController: UIViewController {
     @IBOutlet weak var etIOF: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var dataSource: [Estado] = []
-    var produto: Produto!
     var fetchedResultController: NSFetchedResultsController<Estado>!
+    var label : UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 106
+        tableView.rowHeight = UITableViewAutomaticDimension
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
+        label.text = "Lista de estados vazia"
+        label.textAlignment = .center
+        label.textColor = UIColor.gray
         loadEstados()
 
         // Do any additional setup after loading the view.
@@ -46,11 +53,13 @@ class AjustesViewController: UIViewController {
         let title = (type == .add) ? "Adicionar" : "Editar"
         let alert = UIAlertController(title: "\(title) Estado", message: nil, preferredStyle: .alert)
         alert.addTextField { (tfName: UITextField) in
+            tfName.placeholder = "Nome do estado"
             if let name = estado?.name {
                 tfName.text = name
             }
         }
         alert.addTextField { (tfImposto: UITextField) in
+            tfImposto.placeholder = "Imposto"
             if let imposto = estado?.vl_imposto {
                 tfImposto.text = "\(imposto)"
             }
@@ -139,6 +148,16 @@ extension AjustesViewController: UITableViewDelegate {
 
 extension AjustesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if dataSource.count == 0{
+            self.tableView.backgroundView = label
+            self.tableView.separatorStyle = .none
+
+        }else {
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+
+        }
         return dataSource.count
     }
     

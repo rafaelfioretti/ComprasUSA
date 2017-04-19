@@ -43,7 +43,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J19-49-cu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902" y="-270"/>
+            <point key="canvasLocation" x="4014" y="-270"/>
         </scene>
         <!--Cadastro de Produto-->
         <scene sceneID="72K-SX-tng">
@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="3084" y="-270"/>
         </scene>
-        <!--AjustesViewController-->
+        <!--Ajustes-->
         <scene sceneID="F9J-6w-aih">
             <objects>
-                <viewController title="AjustesViewController" id="hLx-Y3-5Ns" customClass="AjustesViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ajustes" id="hLx-Y3-5Ns" customClass="AjustesViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hXL-4S-pVJ"/>
                         <viewControllerLayoutGuide type="bottom" id="kK5-6B-dl9"/>
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHb-WJ-4B1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3082.5" y="493.3098591549296"/>
+            <point key="canvasLocation" x="4939" y="481"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4x6-Jr-5gV">
@@ -270,12 +270,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gg-oD-y0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="173.16341829085459"/>
+            <point key="canvasLocation" x="2267" y="481"/>
         </scene>
         <!--Total da Compra-->
         <scene sceneID="Ce3-t8-QqD">
             <objects>
-                <viewController id="wRi-pq-MYk" sceneMemberID="viewController">
+                <viewController title="Total da Compra" id="wRi-pq-MYk" customClass="TotalViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FhZ-aT-c9v"/>
                         <viewControllerLayoutGuide type="bottom" id="IOd-yl-rXQ"/>
@@ -299,14 +299,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctn-WD-VcX">
-                                <rect key="frame" x="49" y="151" width="18" height="21"/>
+                                <rect key="frame" x="49" y="151" width="189" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.018721711901257154" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPP-oF-tbH">
-                                <rect key="frame" x="49" y="274" width="18" height="21"/>
+                                <rect key="frame" x="49" y="274" width="189" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.044739867109295783" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -316,16 +316,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da Compra" id="vLL-G1-3YB"/>
+                    <connections>
+                        <outlet property="lbTotalDolar" destination="ctn-WD-VcX" id="pGt-2V-Lrx"/>
+                        <outlet property="lbTotalReal" destination="DPP-oF-tbH" id="ohi-Ls-J23"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlc-6h-raS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2267" y="1290"/>
+            <point key="canvasLocation" x="4938.75" y="1280.2816901408451"/>
         </scene>
     </scenes>
     <resources>
         <image name="gift_placeholder" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eWe-6L-Svn"/>
+        <segue reference="Y1W-MX-oZL"/>
     </inferredMetricsTieBreakers>
 </document>
