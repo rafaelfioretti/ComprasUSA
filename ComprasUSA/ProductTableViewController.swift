@@ -44,16 +44,18 @@ class ProductTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.tableView.backgroundView = label
-        self.tableView.separatorStyle = .none
-        return 0
+        //self.tableView.backgroundView = label
+        //self.tableView.separatorStyle = .none
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductTableViewCell
 
         // Configure the cell...
+        cell.imageIcon.image = UIImage(named: "gift_placeholder")
+        cell.productName.text = "aaa"
 
         return cell
     }
