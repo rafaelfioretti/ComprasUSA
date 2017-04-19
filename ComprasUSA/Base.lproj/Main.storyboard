@@ -96,6 +96,9 @@
                                 <state key="normal" title="Cadastrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveProduct:" destination="3Gu-Wn-kUA" eventType="touchUpInside" id="cs6-8Q-3zO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcO-CD-VRL">
                                 <rect key="frame" x="257" y="310" width="22" height="22"/>
@@ -121,6 +124,8 @@
                     <connections>
                         <outlet property="giftImage" destination="9ef-uF-H5e" id="oaH-Eg-Zeh"/>
                         <outlet property="tfState" destination="3T1-Ax-ByG" id="Ox0-vK-4oU"/>
+                        <outlet property="txtPrice" destination="gu9-bT-wxA" id="Q6l-A3-dM8"/>
+                        <outlet property="txtProductName" destination="zSX-Dv-IHG" id="2C0-UI-pzp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tB-dz-1bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
