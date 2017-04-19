@@ -18,7 +18,13 @@ class RegisterProductViewController: UIViewController {
     var pickerView: UIPickerView!
     
     
+    @IBOutlet weak var txtProductName: UITextField!
+    
+    
     @IBOutlet weak var tfState: UITextField!
+    
+    @IBOutlet weak var txtPrice: UITextField!
+    
 
     var dataSource = [
         "California",
@@ -95,6 +101,10 @@ class RegisterProductViewController: UIViewController {
     }
     
     
+    @IBAction func saveProduct(_ sender: UIButton) {
+    
+    self.navigationController?.popToRootViewController(animated: true)
+    }
  
     
 
