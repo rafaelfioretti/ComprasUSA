@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ComprasUSA/TotalViewController.swift"
-            timestampString = "514264356.530043"
+            timestampString = "514431495.676693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "loadLabels()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getSumProducts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

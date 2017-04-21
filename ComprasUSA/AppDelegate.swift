@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        var appDefaults: [String: Any] = [:]
+        let appDefaults: [String: Any] = [:]
         //appDefaults["colorscheme"] = 0
         //appDefaults["autoplay"] = false
         UserDefaults.standard.register(defaults: appDefaults)
