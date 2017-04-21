@@ -80,7 +80,11 @@ class ProductTableViewController: UITableViewController {
         let product = dataSource[indexPath.row]
         
         // Configure the cell...
-        cell.imageIcon.image = UIImage(named: "gift_placeholder")
+        if let image = product.imagem as? UIImage {
+            cell.imageIcon.image = image
+        } else{
+            cell.imageIcon.image = UIImage(named: "gift_placeholder")
+        }
         cell.productName.text = product.name
         
         return cell
