@@ -61,6 +61,11 @@ class RegisterProductViewController: UIViewController {
         tfState.inputView = pickerView
         tfState.inputAccessoryView = toolBar
         
+        if product != nil{
+            txtProductName.text = product.name
+            txtPrice.text = String(product.valor)
+        }
+        
         loadStates()
     }
     

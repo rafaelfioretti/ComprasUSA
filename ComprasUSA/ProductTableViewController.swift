@@ -40,6 +40,20 @@ class ProductTableViewController: UITableViewController {
         loadProduct()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? RegisterProductViewController{
+            //vc.product = dataSource[tableView.indexPathForSelectedRow!]
+            if tableView.indexPathForSelectedRow != nil{
+                vc.product = dataSource[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "prod", sender: indexPath)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
