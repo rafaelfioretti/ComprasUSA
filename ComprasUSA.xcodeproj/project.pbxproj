@@ -70,11 +70,11 @@
 			children = (
 				E6E1A2771EA705D000FEA9B5 /* product */,
 				C64CC6B91EA42C0B004AA38B /* Settings.bundle */,
+				C6D9EEA61EA430E800C75B22 /* AjustesViewController.swift */,
 				C6BE8FD21EA4197C00F1D7C8 /* AppDelegate.swift */,
 				C64479381EA46AA40023972A /* UIViewController+CoreData.swift */,
 				C6BE8FD41EA4197C00F1D7C8 /* ViewController.swift */,
 				C6BE8FD61EA4197C00F1D7C8 /* Main.storyboard */,
-				C6D9EEA61EA430E800C75B22 /* AjustesViewController.swift */,
 				C6BE8FDC1EA4197C00F1D7C8 /* Assets.xcassets */,
 				C6BE8FDE1EA4197C00F1D7C8 /* LaunchScreen.storyboard */,
 				C6BE8FE11EA4197D00F1D7C8 /* Info.plist */,

@@ -17,7 +17,6 @@ class RegisterProductViewController: UIViewController {
     
     var pickerView: UIPickerView!
     
-    
     @IBOutlet weak var txtProductName: UITextField!
     
     
@@ -25,6 +24,7 @@ class RegisterProductViewController: UIViewController {
     
     @IBOutlet weak var txtPrice: UITextField!
     
+    var product : Produto!
 
     var dataSource = [
         "California",
@@ -102,8 +102,24 @@ class RegisterProductViewController: UIViewController {
     
     
     @IBAction func saveProduct(_ sender: UIButton) {
-    
-    self.navigationController?.popToRootViewController(animated: true)
+        
+        if product == nil{
+            product = Produto(context: context)
+        }
+        
+        product.name = txtProductName.text!
+        product.valor = Double( txtPrice.text!)!
+        
+        
+        do{
+            try self.context.save()
+            //self.loadEstados()
+        } catch {
+            print (error.localizedDescription)
+        }
+        
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
  
     
