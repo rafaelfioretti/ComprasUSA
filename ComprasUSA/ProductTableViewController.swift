@@ -73,6 +73,21 @@ class ProductTableViewController: UITableViewController {
     }
     
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+           let product = self.dataSource[indexPath.row]
+            self.context.delete(product)
+            do {
+                try self.context.save()
+                self.dataSource.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func loadProduct(){
         
         let fetchRequest: NSFetchRequest<Produto> = Produto.fetchRequest()

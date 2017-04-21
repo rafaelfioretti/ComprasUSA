@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class RegisterProductViewController: UIViewController {
     
@@ -29,6 +31,11 @@ class RegisterProductViewController: UIViewController {
     var dataSource = [
         "California",
         "New York"]
+    
+    var dataSourceState: [Estado] = []
+    
+    var fetchedResultController: NSFetchedResultsController<Estado>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +60,24 @@ class RegisterProductViewController: UIViewController {
         
         tfState.inputView = pickerView
         tfState.inputAccessoryView = toolBar
+        
+        loadStates()
+    }
+    
+    func loadStates(){
+        let fetchRequest: NSFetchRequest<Estado> = Estado.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        //fetchedResultController.delegate = self
+        do {
+            dataSourceState = try context.fetch(fetchRequest)
+            print("aaa")
+            
+        } catch{
+            print(error.localizedDescription)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,7 +164,7 @@ class RegisterProductViewController: UIViewController {
     }
     
     func done() {
-        tfState.text = dataSource[pickerView.selectedRow(inComponent: 0)]
+        tfState.text = dataSourceState[pickerView.selectedRow(inComponent: 0)].name
         cancel()
     }
 
@@ -169,11 +194,11 @@ extension RegisterProductViewController: UIImagePickerControllerDelegate, UINavi
 
 extension RegisterProductViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataSource[row]
+        return dataSourceState[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tfState.text = dataSource[row]
+        tfState.text = dataSourceState[row].name
     }
 }
 
@@ -184,7 +209,15 @@ extension RegisterProductViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataSource.count
+        return dataSourceState.count
+    }
+    
+}
+
+extension RegisterProductViewController: NSFetchedResultsControllerDelegate{
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+       
     }
     
 }
