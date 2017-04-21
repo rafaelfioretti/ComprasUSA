@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C64479391EA46AA40023972A /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64479381EA46AA40023972A /* UIViewController+CoreData.swift */; };
 		C64CC6BA1EA42C0B004AA38B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C64CC6B91EA42C0B004AA38B /* Settings.bundle */; };
+		C65053721EA7090E00E93E7F /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65053711EA7090E00E93E7F /* TotalViewController.swift */; };
 		C6BE8FD31EA4197C00F1D7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BE8FD21EA4197C00F1D7C8 /* AppDelegate.swift */; };
 		C6BE8FD51EA4197C00F1D7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BE8FD41EA4197C00F1D7C8 /* ViewController.swift */; };
 		C6BE8FD81EA4197C00F1D7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6BE8FD61EA4197C00F1D7C8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		C64479381EA46AA40023972A /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		C64CC6B91EA42C0B004AA38B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		C65053711EA7090E00E93E7F /* TotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 		C6BE8FCF1EA4197C00F1D7C8 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BE8FD21EA4197C00F1D7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6BE8FD41EA4197C00F1D7C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 				C64479381EA46AA40023972A /* UIViewController+CoreData.swift */,
 				C6BE8FD41EA4197C00F1D7C8 /* ViewController.swift */,
 				C6BE8FD61EA4197C00F1D7C8 /* Main.storyboard */,
+				C65053711EA7090E00E93E7F /* TotalViewController.swift */,
+				C6D9EEA61EA430E800C75B22 /* AjustesViewController.swift */,
 				C6BE8FDC1EA4197C00F1D7C8 /* Assets.xcassets */,
 				C6BE8FDE1EA4197C00F1D7C8 /* LaunchScreen.storyboard */,
 				C6BE8FE11EA4197D00F1D7C8 /* Info.plist */,
@@ -174,6 +178,7 @@
 				C64479391EA46AA40023972A /* UIViewController+CoreData.swift in Sources */,
 				C6BE8FD31EA4197C00F1D7C8 /* AppDelegate.swift in Sources */,
 				E61A9B721EA43704006343B2 /* RegisterProductViewController.swift in Sources */,
+				C65053721EA7090E00E93E7F /* TotalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
