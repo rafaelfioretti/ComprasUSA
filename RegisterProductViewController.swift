@@ -26,15 +26,15 @@ class RegisterProductViewController: UIViewController {
     
     @IBOutlet weak var txtPrice: UITextField!
     
-    var product : Produto!
-
-    var dataSource = [
-        "California",
-        "New York"]
+    @IBOutlet weak var switchCredictCard: UISwitch!
     
+    var product : Produto!
+ 
     var dataSourceState: [Estado] = []
     
     var fetchedResultController: NSFetchedResultsController<Estado>!
+    
+    var selectState : Estado!
     
     
     override func viewDidLoad() {
@@ -64,8 +64,18 @@ class RegisterProductViewController: UIViewController {
         if product != nil{
             txtProductName.text = product.name
             txtPrice.text = String(product.valor)
+            tfState.text = product.estados?.name!
+            switchCredictCard.isOn = product.cartao
+            if let image = product.imagem as? UIImage {
+                giftImage.image = image
+            }
+            
         }
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadStates()
     }
     
@@ -139,11 +149,16 @@ class RegisterProductViewController: UIViewController {
         
         product.name = txtProductName.text!
         product.valor = Double( txtPrice.text!)!
+        if selectState != nil{
+            product.estados = selectState
+        }
+        
+        product.cartao = switchCredictCard.isOn
+        product.imagem = smallImage
         
         
         do{
             try self.context.save()
-            //self.loadEstados()
         } catch {
             print (error.localizedDescription)
         }
@@ -203,6 +218,7 @@ extension RegisterProductViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectState = dataSourceState[row]
         tfState.text = dataSourceState[row].name
     }
 }

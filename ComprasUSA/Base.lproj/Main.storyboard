@@ -140,6 +140,7 @@
                     </view>
                     <connections>
                         <outlet property="giftImage" destination="9ef-uF-H5e" id="oaH-Eg-Zeh"/>
+                        <outlet property="switchCredictCard" destination="sS5-iB-Un5" id="sTy-Aw-SwM"/>
                         <outlet property="tfState" destination="3T1-Ax-ByG" id="Ox0-vK-4oU"/>
                         <outlet property="txtPrice" destination="gu9-bT-wxA" id="Q6l-A3-dM8"/>
                         <outlet property="txtProductName" destination="zSX-Dv-IHG" id="2C0-UI-pzp"/>
@@ -352,6 +353,6 @@
         <image name="gift_placeholder" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y1W-MX-oZL"/>
+        <segue reference="eWe-6L-Svn"/>
     </inferredMetricsTieBreakers>
 </document>
