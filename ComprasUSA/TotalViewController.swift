@@ -53,7 +53,7 @@ class TotalViewController: UIViewController {
     
     
     func loadLabels(){
-        var real = (totalDolar * cotacao * iof)
+        let real = (totalDolar * cotacao * iof)
         lbTotalDolar.text = "\(totalDolar)"
         lbTotalReal.text = "\(real)"
 
