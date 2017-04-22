@@ -38,6 +38,18 @@ class ProductTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         loadProduct()
+        
+        checkDataSourceIsEmpty()
+    }
+    
+    func checkDataSourceIsEmpty(){
+        if dataSource.count == 0 {
+            self.tableView.separatorStyle = .none
+            self.tableView.backgroundView = label
+        } else{
+             self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,9 +80,7 @@ class ProductTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //self.tableView.backgroundView = label
-        //self.tableView.separatorStyle = .none
-        return dataSource.count
+       return dataSource.count
     }
     
     
@@ -102,6 +112,7 @@ class ProductTableViewController: UITableViewController {
                 try self.context.save()
                 self.dataSource.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                checkDataSourceIsEmpty()
             } catch {
                 print(error.localizedDescription)
             }
@@ -114,7 +125,7 @@ class ProductTableViewController: UITableViewController {
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        //fetchedResultController.delegate = self
+        fetchedResultController.delegate = self
         do {
             dataSource = try context.fetch(fetchRequest)
             tableView.reloadData()
@@ -122,8 +133,6 @@ class ProductTableViewController: UITableViewController {
         } catch{
             print(error.localizedDescription)
         }
-        
-        
         
     }
     
