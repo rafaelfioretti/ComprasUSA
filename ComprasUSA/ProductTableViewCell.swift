@@ -14,6 +14,14 @@ class ProductTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productName: UILabel!
     
+    
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var state: UILabel!
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()

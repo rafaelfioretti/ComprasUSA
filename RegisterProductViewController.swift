@@ -149,12 +149,16 @@ class RegisterProductViewController: UIViewController {
         
         product.name = txtProductName.text!
         product.valor = Double( txtPrice.text!)!
+       
         if selectState != nil{
             product.estados = selectState
         }
         
+        
+        
+        
         product.cartao = switchCredictCard.isOn
-        product.imagem = smallImage
+        product.imagem = giftImage.image
         
         
         do{
@@ -167,6 +171,15 @@ class RegisterProductViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
  
+    /*func getStateByName(productName: String) -> Estado{
+        
+        for estado in dataSourceState {
+                if estado.name ==
+        }
+        
+        
+        
+    }*/
     
 
     /*
@@ -184,6 +197,7 @@ class RegisterProductViewController: UIViewController {
     }
     
     func done() {
+        selectState = dataSourceState[pickerView.selectedRow(inComponent: 0)]
         tfState.text = dataSourceState[pickerView.selectedRow(inComponent: 0)].name
         cancel()
     }

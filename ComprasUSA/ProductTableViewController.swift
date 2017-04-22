@@ -86,6 +86,8 @@ class ProductTableViewController: UITableViewController {
             cell.imageIcon.image = UIImage(named: "gift_placeholder")
         }
         cell.productName.text = product.name
+        cell.price.text = String(product.valor)
+        cell.state.text = product.estados?.name!
         
         return cell
     }
