@@ -24,10 +24,20 @@ class TotalViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cotacao = Double(UserDefaults.standard.string(forKey: SettingsType.cotacaoDolar.rawValue)!)
-        iof = Double(UserDefaults.standard.string(forKey: SettingsType.vlIOF.rawValue)!)
-        getSumProducts();
-        loadLabels();
+        
+        var cotacaoObj = UserDefaults.standard.object(forKey: SettingsType.cotacaoDolar.rawValue)
+        var iofObj = UserDefaults.standard.object(forKey: SettingsType.vlIOF.rawValue)
+        
+        if cotacaoObj != nil && iofObj != nil{
+       
+            cotacao = Double(UserDefaults.standard.string(forKey: SettingsType.cotacaoDolar.rawValue)!)
+            iof = Double(UserDefaults.standard.string(forKey: SettingsType.vlIOF.rawValue)!)
+            getSumProducts();
+            loadLabels();
+        }
+        
+        
+        
     
     }
 
