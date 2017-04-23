@@ -103,9 +103,9 @@ class ProductTableViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-            //tableView.deleteRows(at: [indexPath], with: .fade)
            let product = self.dataSource[indexPath.row]
             self.context.delete(product)
             do {
@@ -117,6 +117,21 @@ class ProductTableViewController: UITableViewController {
                 print(error.localizedDescription)
             }
         }
+    }*/
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Excluir") { (action: UITableViewRowAction, indexPath: IndexPath) in
+            let produto = self.dataSource[indexPath.row]
+            self.context.delete(produto)
+            try! self.context.save()
+            self.dataSource.remove(at: indexPath.row)
+            self.checkDataSourceIsEmpty()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        
+        
+        return [deleteAction]
     }
     
     func loadProduct(){

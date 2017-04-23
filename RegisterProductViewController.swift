@@ -143,43 +143,39 @@ class RegisterProductViewController: UIViewController {
     
     @IBAction func saveProduct(_ sender: UIButton) {
         
+        
         if product == nil{
             product = Produto(context: context)
         }
         
-        product.name = txtProductName.text!
-        product.valor = Double( txtPrice.text!)!
-       
-        if selectState != nil{
-            product.estados = selectState
+        if txtPrice.text != nil && txtProductName.text != nil && selectState != nil {
+            
+            product.name = txtProductName.text!
+            product.valor = Double( txtPrice.text!)!
+            
+            if selectState != nil{
+                product.estados = selectState
+            }
+            
+            product.cartao = switchCredictCard.isOn
+            product.imagem = giftImage.image
+            
+            
+            do{
+                try self.context.save()
+            } catch {
+                print (error.localizedDescription)
+            }
+            self.navigationController?.popToRootViewController(animated: true)
+        
+        } else{
+            let alert = UIAlertController(title: "Validação", message: "Os campos Nome, Valor e Estado são obrigatórios", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
-        
-        
-        
-        product.cartao = switchCredictCard.isOn
-        product.imagem = giftImage.image
-        
-        
-        do{
-            try self.context.save()
-        } catch {
-            print (error.localizedDescription)
-        }
-        
-        
-        self.navigationController?.popToRootViewController(animated: true)
     }
  
-    /*func getStateByName(productName: String) -> Estado{
-        
-        for estado in dataSourceState {
-                if estado.name ==
-        }
-        
-        
-        
-    }*/
     
 
     /*
