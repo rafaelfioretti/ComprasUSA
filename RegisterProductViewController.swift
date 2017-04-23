@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class RegisterProductViewController: UIViewController {
+class RegisterProductViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var giftImage: UIImageView!
@@ -72,7 +72,17 @@ class RegisterProductViewController: UIViewController {
             
         }
         
+       
+        txtPrice.delegate = self
         
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowed = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        
+        return allowed.isSuperset(of: characterSet)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -144,11 +154,11 @@ class RegisterProductViewController: UIViewController {
     @IBAction func saveProduct(_ sender: UIButton) {
         
         
-        if product == nil{
-            product = Produto(context: context)
-        }
-        
         if txtPrice.text != nil && txtProductName.text != nil && selectState != nil {
+            
+            if product == nil{
+                product = Produto(context: context)
+            }
             
             product.name = txtProductName.text!
             product.valor = Double( txtPrice.text!)!

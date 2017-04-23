@@ -19,7 +19,7 @@ enum CategoryAlertType {
     case edit
 }
 
-class AjustesViewController: UIViewController {
+class AjustesViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var etCotacao: UITextField!
     @IBOutlet weak var etIOF: UITextField!
@@ -40,6 +40,9 @@ class AjustesViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = UIColor.gray
         loadEstados()
+        
+        etCotacao.delegate = self
+        etIOF.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -79,6 +82,13 @@ class AjustesViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowed = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        
+        return allowed.isSuperset(of: characterSet)
     }
     
     
