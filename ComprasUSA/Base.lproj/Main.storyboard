@@ -108,6 +108,7 @@
                                 <rect key="frame" x="16" y="360" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cartão?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uc-oR-NRB">
@@ -154,6 +155,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btnSave" destination="M3c-iV-Vap" id="8yi-20-UWE"/>
                         <outlet property="giftImage" destination="9ef-uF-H5e" id="oaH-Eg-Zeh"/>
                         <outlet property="switchCredictCard" destination="sS5-iB-Un5" id="sTy-Aw-SwM"/>
                         <outlet property="tfState" destination="3T1-Ax-ByG" id="Ox0-vK-4oU"/>

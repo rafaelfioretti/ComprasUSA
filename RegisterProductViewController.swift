@@ -28,6 +28,9 @@ class RegisterProductViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var switchCredictCard: UISwitch!
     
+    
+    @IBOutlet weak var btnSave: UIButton!
+    
     var product : Produto!
  
     var dataSourceState: [Estado] = []
@@ -69,7 +72,9 @@ class RegisterProductViewController: UIViewController, UITextFieldDelegate {
             if let image = product.imagem as? UIImage {
                 giftImage.image = image
             }
-            
+            btnSave.setTitle("Atualizar", for: .normal)
+        }else{
+            btnSave.setTitle("Cadastrar", for: .normal)
         }
         
        
@@ -154,10 +159,13 @@ class RegisterProductViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveProduct(_ sender: UIButton) {
         
         
-        if txtPrice.text != nil && txtProductName.text != nil && selectState != nil {
+        if txtPrice.text != nil && txtProductName.text != nil && tfState != nil {
             
             if product == nil{
                 product = Produto(context: context)
+                btnSave.setTitle("Cadastrar", for: .normal)
+            } else{
+                btnSave.setTitle("Atualizar", for: .normal)
             }
             
             product.name = txtProductName.text!
@@ -203,8 +211,11 @@ class RegisterProductViewController: UIViewController, UITextFieldDelegate {
     }
     
     func done() {
-        selectState = dataSourceState[pickerView.selectedRow(inComponent: 0)]
-        tfState.text = dataSourceState[pickerView.selectedRow(inComponent: 0)].name
+        if dataSourceState.count > 0{
+            selectState = dataSourceState[pickerView.selectedRow(inComponent: 0)]
+            tfState.text = dataSourceState[pickerView.selectedRow(inComponent: 0)].name
+        }
+        
         cancel()
     }
 
